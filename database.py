@@ -91,12 +91,9 @@ def check_password(username, password):
 
     return False
 
-# listi = ['mayag', 'or', 'mai', 'yoav', 'itay', 'mohammady', 'georgem', 'wassim', 'joyce', 'sumayah', 'fanar', 'noam', 'shir', 'zohar', 'ido', 'itamar', 'judeh', 'wael', 'mona', 'mayaj', 'natal', 'shaked', 'nevi', 'amit', 'noorm', 'maayan', 'aboud', 'georgea', 'noora', 'sadeen', 'rahaf', 'avishag', 'danielle', 'uri', 'aviv', 'toby', 'kareem', 'wajeeh', 'mohammadh', 'dalia']
-# for i in listi:
-#     add_user(con(),i + "20", "meetyear20", "student")
-# listi = ['sadekmaster', 'talmaster', 'noamta','rahafta', 'einavta', 'mousata']
-# for i in listi:
-#     add_user(con(),i, 'amazingstaff', 'staff')
+names = ["comer", "cguy", "cpaz", "cron", "clior", "cnoa"]
+for name in names:
 
-# add_user(con(), "noam", "password", "teacher")
-# add_user(con(), "student", "password", "student")
+    add_user(con(), name, "a123456", "teacher")
+
+add_user(con(), "computer", "a123456", "student")
