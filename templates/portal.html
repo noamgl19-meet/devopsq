@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>portal</title>
+    </head>
+    <body>
+        <a>hello {{username}}, <a href = "{{url_for('logout')}}">logout</a></a>
+        <a dir = "rtl">{{date}}</a>
+        <h1>Staff portal</h1>
+        <hr>
+        <h2>students data</h2>
+        <table>
+            <tr>
+                <td>name</td>
+                <td>amount of requests</td>
+            </tr>
+            {%for s in students%}
+            <tr>
+                <td>{{s.username}}</td>
+                <td>{{s.requests}}</td>
+            </tr>
+            {%endfor%}
+        </table>
+
+        <h2>requests by dates:</h2>
+        {%for d in dates%}
+        <h3>{{d}}</h3>
+        {%for r in requests%}
+            {%if r.date == d%}
+                <span>student: {{r.student}} | question: {{r.question}} | {%if r.answered == False%}<span style = "color: red;">answered: {{r.answered}}</span>{%else%}<span style = "color: green;">answered: {{r.answered}}</span>{%endif%}</span>
+                <br>
+            {%endif%}
+        {%endfor%}
+        {%endfor%}
+        
+    </body>
+</html>

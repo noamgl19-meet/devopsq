@@ -1,0 +1,91 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Help Queue</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='assets/css/noscript.css') }}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Wrapper -->
+                <div id="wrapper">
+
+                    <!-- Panel (Banner) -->
+                    <section class="panel banner right">
+                        <div class="content color0 span-3-75">
+                            <h1 class="major">DevOps Help Queue</h1>
+                            <p>Powered by Einav Raviv and Noam Globerman</p>
+
+                            <ul class="actions">
+                                <li><a href="#queue" class="button primary color2 icon solid far fa-question-circle">Create A Request</a></li>
+                            </ul>
+                            <ul class="alt">
+                                {%if amount > 1 or amount == 0%}
+                                <li>There are {{amount}} requests in this queue.</li>
+                                {%else%}
+                                <li>There is {{amount}} request in this queue.</li>
+                                {%endif%}
+                                <!-- <li>take a minute to aprecciate this amazing ux!.<br>{%if now != 0%} you have been waiting for {{now}}{%else%}you are currently not waiting :){%endif%} minutes.</li> -->
+                            </ul>
+
+                        </div>
+
+                    </section>
+                    
+                        <!-- Panel -->
+                        <section class="panel color4-alt" id="queue">
+                          
+                            <div class="inner columns divided">
+                                    <div class="span-3-25">
+                                        <h2 class="major">Create A Request</h2>
+
+                                        <form method="post" action="/home">
+                                            <div class="fields">
+                                                <div class="field third">
+                                                    <label for="demo-name">Name</label>
+                                                    <input type="text" name="demo-name" id="demo-name" placeholder="student name" />
+                                                </div>
+
+                                                <div class="field">
+                                                    <label for="demo-message">What subject?</label>
+                                                    <textarea style="width:100%;" name="question" id="demo-message" placeholder="What subject?" rows="4"></textarea>
+                                                </div>
+                                            </div>
+                                            <ul class="actions">
+                                                <li><input type="submit" value="Submit Request" class="button primary" /></li>
+                                                <li><input type="reset" value="Reset" /></li>
+
+                                            </ul>
+                                        </form>
+                                        <span>{{msg}}</span>
+                                        <br>
+                                        <a href = "{{url_for('logout')}}">logout</a>
+                                        </div>
+                                        <div class="span-1-5">
+                                            <ul class="contact-icons color1">
+
+                                                <div class="copyright">&copy; Developed By Einav Raviv And Noam Globerman</div>
+                                            </ul>
+
+                                        </div>
+                                     </div>                        
+
+                        </section>
+
+
+
+                       
+        <!-- Scripts -->
+        
+			<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+	</body>
+</html>
