@@ -91,9 +91,9 @@ def check_password(username, password):
 
     return False
 
-names = ["comer", "cguy", "cpaz", "cron", "clior", "cnoa"]
-for name in names:
+# names = ["comer", "cguy", "cpaz", "cron", "clior", "cnoa"]
+# for name in names:
 
-    add_user(con(), name, "a123456", "teacher")
+#     add_user(con(), name, "a123456", "teacher")
 
-add_user(con(), "computer", "a123456", "student")
+# add_user(con(), "computer", "a123456", "student")
